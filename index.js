@@ -1,11 +1,12 @@
 const output = document.querySelector(".output");
+const buttons = document.querySelectorAll(".item");
+
 let equation = "";
 let number = "";
 let id = "";
 let type = "";
 let square = false;
 
-const buttons = document.querySelectorAll(".item");
 
 for (let i = 0; i < buttons.length; i++) {
 	buttons[i].addEventListener("click", function() {
@@ -56,15 +57,14 @@ function Clear() {
 
 function Operator() {
 	if (number !== "") { 
-        console.log(number);
         equation += number + " " + id + " "; 
         output.value = equation.trim();
         number = ""; 
     } else {
         if (square) {
-        equation += id + " "; 
-        output.value = equation.trim();
-        number = "";
+            equation += id + " "; 
+            output.value = equation.trim();
+            number = "";
         }
     }
 }
